@@ -25,7 +25,7 @@
 
         $html .= '<td id="row'.$id_row.'" class="cell '.$color.'" pic="0" count="'.$count.'">';
           foreach ($images as $img) {
-            $html .= '<img height="80"src="'.$img.'" alt=""> ';
+            $html .= '<img height="80"src="'.$img.'" alt="">';
           }
         $html .= "</td>";
       }
