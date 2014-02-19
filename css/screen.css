@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+}
+table {
+  height: 80%;
+}
+table img {
+  display: none;
+}
+table td {
+  background-size: cover;
+  background-repeat: no-repeat;
+}

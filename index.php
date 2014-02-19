@@ -11,22 +11,51 @@
   }else{
     $map_name   = $_GET["map_name="];
     $map_stacks = glob("$assets/maps/$map_name/*");
-    $grid = construct_grid($map_stacks);
+    $lines = construct_grid($map_stacks);
+    
+    $html = '<table class="table table-hover"><caption>'.$map_name.'</caption><tbody>';
+    foreach ($lines as $id_row => $cells) {
+      $html .= '<tr id="row'.$id_row.'" class="row">';
+      foreach ($cells as $id_cell => $images) {
+        
+        $count = count($images);
+        
+        if($count == 0) $color = "danger";
+        else $color = "success";
+
+        $html .= '<td id="row'.$id_row.'" class="cell '.$color.'" pic="0" count="'.$count.'">';
+          foreach ($images as $img) {
+            $html .= '<img height="80"src="'.$img.'" alt=""> ';
+          }
+        $html .= "</td>";
+      }
+      $html .= "</tr>";  
+    }
+    $html .= '</tbody></table>';
   }
 ?>
 <html>
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="lib/bootstrap-3.1.1-dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="lib/bootstrap-3.1.1-dist/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="css/screen.css">
   </head>
   <body>
-    <pre> 
-      <?php print_r($grid); ?>
-    </pre>
-
+    <div class="container">
+      <?php // print_r($grid); ?>
       <?php 
         echo $maps_list;
-      ?>
+        echo $html;
+      ?>      
+    </div>
+      <script src="lib/jquery-2.1.0.min.js"></script>
+      <script src="lib/jquery-mousewheel/jquery.mousewheel.js"></script>
+      
+      <script src="js/vpm.js"></script>
+      
   </body>
   
 </html>
