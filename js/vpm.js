@@ -1,15 +1,20 @@
 $(function() {
-  
   var st = 0, sd = 0, step = 30;
   $('td')
     .each( function(){
-      $(this).css("background-image", "url("+$(this).find(":nth-child(1)").attr("src")+")")
+      var bg;
+      
+      if($(this).children().length > 0){
+        bg = $(this).find(":nth-child(1)").attr("src");
+        $(this).css("background-image", "url("+bg+")");
+      }
     })
     .mousewheel(function(event, delta) {
-      var id = parseInt($(this).attr("pic")),
-          count = parseInt($(this).attr("count")),
-          bg;
-    
+      var id, count, bg;
+      
+      id = parseInt($(this).attr("pic"));
+      count = $(this).children().length;
+      
       if (delta < 0) {
         st++;
         if (st > step) {
@@ -23,8 +28,8 @@ $(function() {
           sd = 0;
         };
       }
-      if(count > 1){
-        
+      
+      if (count > 1){
         if (id < 0) id = count-1;
         id = id % count;
         
