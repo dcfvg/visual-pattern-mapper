@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="css/screen.css">
   </head>
   <body>
-    <div class="container">
+    <div>
       <?php // print_r($grid); ?>
       <?php 
         echo $maps_list;
