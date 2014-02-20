@@ -5,8 +5,7 @@
   if(!isset($_GET["map_name"])){
     $maps_path = glob("$assets/maps/*/");
     foreach ($maps_path as $id => $map_path) { 
-      $img_count = count(glob($map_path."/*/*.jpg"));
-      
+      $img_count = count(glob($map_path."*/*.jpg"));
       $maps_list .=  '<a class="list-group-item" href="?map_name='.basename($map_path).'"><span class="badge">'.$img_count.'</span>'.basename($map_path).'</a>';
 
     }
