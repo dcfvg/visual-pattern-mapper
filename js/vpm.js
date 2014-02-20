@@ -32,6 +32,11 @@ $(function() {
       change_pic = false;
     });
     
+    window.onunload = function() {
+        console.log("save picid")
+        $('td').each( function(){ save_picid($(this).attr("dir"), $(this).attr("pic"));});
+    }
+    
     $( "#filters button" ).click(function() {
       $( "#filters button" ).removeClass("btn-primary").addClass("btn-default");
       
