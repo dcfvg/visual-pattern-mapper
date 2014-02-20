@@ -1,8 +1,12 @@
 * {
   margin: 0;
 }
+body {
+  overflow: hidden;
+}
 table {
-  height: 90%;
+  height: 100%;
+  width: 80% !important;
 }
 table img {
   display: none;
@@ -10,4 +14,12 @@ table img {
 table td {
   background-size: cover;
   background-repeat: no-repeat;
+}
+#preview {
+  position: absolute;
+  left: 80%;
+  width: 20%;
+}
+#preview img {
+  width: 100%;
 }

@@ -2,15 +2,17 @@
 
   $rep = array("hello");
 
-  $from = $_POST["from"];
-  $to   = $_POST["to"];
+  if(isset($_POST["from"]) && isset($_POST["to"])){
+    $from = $_POST["from"];
+    $to   = $_POST["to"];
 
-  $filename = basename($from);
-    
-  $c = copy($from, "$to/$filename");
-  if($c) $u = unlink($from);
-  
-  $res["result"] = "$from -> $to";
+    $filename = basename($from);
+
+    rename($from, "$to/$filename");
+
+    $res["mov"] = "$from -> $to";
+  }
+
   header('Content-Type: application/json');
   echo json_encode($res);
 ?>

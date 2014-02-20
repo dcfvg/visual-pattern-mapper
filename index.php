@@ -9,11 +9,11 @@
     }
     $maps_list = "<h1>choose a map</h1><ul>$maps_list</ul>";
   }else{
-    $map_name   = $_GET["map_name="];
-    $map_stacks = glob("$assets/maps/$map_name/*");
+    $map_name   = $_GET["map_name"];
+    $map_stacks = glob("$assets/maps/$map_name/");
     $lines = construct_grid($map_stacks);
     
-    $html = '<table class="table table-hover"><caption>'.$map_name.'</caption><tbody>';
+    $html = '<table class="table table-hover"><tbody>';
     foreach ($lines as $id_row => $cells) {
       $html .= '<tr id="row'.$id_row.'" class="row">';
       foreach ($cells as $id_cell => $images) {
@@ -46,6 +46,10 @@
     <link rel="stylesheet" href="css/screen.css">
   </head>
   <body>
+    <div id="preview">
+      <h2><?php echo $map_name ?></h2>
+      <img src="" alt="">
+    </div>
     <div>
       <?php // print_r($grid); ?>
       <?php 

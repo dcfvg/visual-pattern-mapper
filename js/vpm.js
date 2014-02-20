@@ -23,8 +23,8 @@ $(function() {
     })
     .hover(function(event){
       init_drag($(this), event);
+      preview_refresh($(this));
     });
-    
     function init_drag(obj, event){
       obj.draggable({
         revert: "valid",
@@ -69,11 +69,22 @@ $(function() {
             .removeClass('success')
             .addClass('danger');
         }
+        preview_refresh(mt);
     }
     function moveFile( from , to ){
        var posting = $.post(ajax_url, { from:from, to:to } );
        posting.done(function( data ) {
          console.log(data);
        });
-     } 
+    }
+    function save_picid(dir, pic){
+      var posting = $.post(ajax_url, { dir:dir, pic:pic } );
+      posting.done(function( data ) {
+        console.log(data);
+      });
+    }
+    function preview_refresh(mt){
+      var src = mt.find(":nth-child("+(parseInt(mt.attr("pic"))+1)+")").attr("src");
+      $("#preview img").attr("src",src);
+    }
 })
