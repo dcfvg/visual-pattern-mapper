@@ -5,13 +5,13 @@
   if(!isset($_GET["map_name"])){
     $maps_path = glob("$assets/maps/*/");
     foreach ($maps_path as $id => $map_path) { 
-      $img_count = count(glob("$assets/maps/*/*/*.jpg"));
+      $img_count = count(glob($map_path."/*/*.jpg"));
       
       $maps_list .=  '<a class="list-group-item" href="?map_name='.basename($map_path).'"><span class="badge">'.$img_count.'</span>'.basename($map_path).'</a>';
 
     }
     $page_class = "home";
-    $maps_list = '<h1>choose a map</h1><div class="list-group">'.$maps_list.'</div>';
+    $maps_list = '<h1>visual pattern mapper</h1><hr><p class="lead">choose a map</p><div class="list-group">'.$maps_list.'</div>';
   }else{
     $map_name   = $_GET["map_name"];
     $map_stacks = glob("$assets/maps/$map_name/");
@@ -75,8 +75,11 @@
           </button>
           <hr>
           <button type="button" class="btn btn-primary " filter="none">
-             <span class="glyphicon glyphicon glyphicon-remove-circle"></span> reset
+             <span class="glyphicon glyphicon glyphicon-remove-circle"></span> reset filters
            </button>
+           <a class="btn btn-danger " href="/">
+              <span class="glyphicon glyphicon glyphicon-remove-circle"></span> back to map list
+            </a>
         </div>
         <hr>
       <p><img src="" alt=""></p>
