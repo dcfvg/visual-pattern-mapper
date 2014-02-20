@@ -1,9 +1,11 @@
 $(function() {
-  var st = 0, sd = 0, step = 10, z = 10, ajax_url = "call_ajax.php";
+  var st = 0, sd = 0, step = 10, z = 10, ajax_url = "call_ajax.php", change_pic = false;
   $('td')
     .each( function(){ refreshImage($(this) , 0);})
     .mousewheel(function(event, delta) {
      // var id, count, bg;
+     
+     change_pic = true;
       if (delta < 0) {
         st++;
         if (st > step) {
@@ -18,13 +20,18 @@ $(function() {
         };
       }
       
-    
       
     })
-    .hover(function(event){
+    .mouseover(function(event){
       init_drag($(this), event);
       preview_refresh($(this));
+
+    })
+    .mouseout(function() {
+      if(change_pic)save_picid($(this).attr("dir"), $(this).attr("pic"));
+      change_pic = false;
     });
+    
     function init_drag(obj, event){
       obj.draggable({
         revert: true,
@@ -56,12 +63,12 @@ $(function() {
         if(count > 0){
           var pic_id = parseInt(mt.attr("pic")) + inc;
 
-          if (pic_id < 0) pic = count-1;
+          if (pic_id < 0) pic_id = count-1;
           pic_id = pic_id % count;
 
           var bg = mt.find(":nth-child("+(pic_id+1)+")").attr("src");
           
-          save_picid(mt.attr("dir"), pic_id);
+          //save_picid(mt.attr("dir"), pic_id);
           
           mt.css("background-image", "url("+bg+")").attr("pic", pic_id)
             .removeClass('danger')
