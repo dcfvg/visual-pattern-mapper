@@ -36,3 +36,6 @@ table td {
 #preview img {
   width: 100%;
 }
+.home #preview {
+  display: none;
+}

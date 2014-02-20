@@ -8,7 +8,9 @@
       $img_count = count(glob("$assets/maps/*/*/*.jpg"));
       
       $maps_list .=  '<a class="list-group-item" href="?map_name='.basename($map_path).'"><span class="badge">'.$img_count.'</span>'.basename($map_path).'</a>';
+
     }
+    $page_class = "home";
     $maps_list = '<h1>choose a map</h1><div class="list-group">'.$maps_list.'</div>';
   }else{
     $map_name   = $_GET["map_name"];
@@ -51,7 +53,7 @@
     
     <link rel="stylesheet" href="css/screen.css">
   </head>
-  <body class="blackwhite">
+  <body class="<?php echo $page_class; ?>" >
     <div id="preview">
       <h2><?php echo $map_name ?></h2>
         <hr>
