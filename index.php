@@ -5,9 +5,11 @@
   if(!isset($_GET["map_name"])){
     $maps_path = glob("$assets/maps/*/");
     foreach ($maps_path as $id => $map_path) { 
-      $maps_list .=  '<li><a href="?map_name='.basename($map_path).'">'.basename($map_path).'</a></li>';
+      $img_count = count(glob("$assets/maps/*/*/*.jpg"));
+      
+      $maps_list .=  '<a class="list-group-item" href="?map_name='.basename($map_path).'"><span class="badge">'.$img_count.'</span>'.basename($map_path).'</a>';
     }
-    $maps_list = "<h1>choose a map</h1><ul>$maps_list</ul>";
+    $maps_list = '<h1>choose a map</h1><div class="list-group">'.$maps_list.'</div>';
   }else{
     $map_name   = $_GET["map_name"];
     $map_stacks = glob("$assets/maps/$map_name/");
@@ -49,16 +51,20 @@
     
     <link rel="stylesheet" href="css/screen.css">
   </head>
-  <body>
+  <body class="blackwhite">
     <div id="preview">
+            <button type="button" class="btn btn-primary " id="blackWhite"><span class="glyphicon glyphicon-picture"></span> desaturate</button>
       <h2><?php echo $map_name ?></h2>
-      <img src="" alt="">
+
+      
+      <p><img src="" alt=""></p>
+      
     </div>
-    <div>
+    <?php         echo $html;?>
+    <div class="container">
       <?php // print_r($grid); ?>
       <?php 
         echo $maps_list;
-        echo $html;
       ?>      
     </div>
       <script src="lib/jquery-2.1.0.min.js"></script>

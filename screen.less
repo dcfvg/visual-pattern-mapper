@@ -9,12 +9,15 @@ table{
     display:none;
   }
   td {
-    background-size:contain;
+    background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
   }
   height:100%;
-  width:80% !important;
+  width:80% !important; 
+}
+.desaturate {
+  -webkit-filter: grayscale(100%) contrast(100%);
 }
 #preview {
   position:absolute;

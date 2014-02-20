@@ -32,6 +32,10 @@ $(function() {
       change_pic = false;
     });
     
+    $( "#blackWhite" ).click(function() {
+      $("table td").toggleClass("desaturate");
+    });
+    
     function init_drag(obj, event){
       obj.draggable({
         revert: true,

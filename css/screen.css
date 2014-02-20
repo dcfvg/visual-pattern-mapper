@@ -12,9 +12,12 @@ table img {
   display: none;
 }
 table td {
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+.desaturate {
+  -webkit-filter: grayscale(100%) contrast(100%);
 }
 #preview {
   position: absolute;
