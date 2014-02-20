@@ -49,10 +49,13 @@ $(function() {
           
           var img_source = ui.draggable.find(":nth-child("+(pic+1)+")");
           
-          console.log($(this));
+          // console.log($(this));
           
-          moveFile(img_source.attr("src"), $(this).attr("dir"));
-          
+          var posting = $.post(ajax_url, { from:img_source.attr("src"), to:$(this).attr("dir") } );
+           posting.done(function( data ) {
+             img_source.attr("src", data.newurl); // if we move image, we need to change url
+           });
+              
           $(this)
             .prepend(img_source)
             .attr("pic", 0);
@@ -88,8 +91,10 @@ $(function() {
     function moveFile( from , to ){
        var posting = $.post(ajax_url, { from:from, to:to } );
        posting.done(function( data ) {
-         console.log(data);
+         //console.log(data.newurl);
+         return data.newurl;
        });
+
     }
     function save_picid(dir, pic_id){
       var posting = $.post(ajax_url, { dir:dir, pic_id:pic_id } );

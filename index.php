@@ -53,10 +53,12 @@
   </head>
   <body class="blackwhite">
     <div id="preview">
-            <button type="button" class="btn btn-primary " id="blackWhite"><span class="glyphicon glyphicon-picture"></span> desaturate</button>
-      <h2><?php echo $map_name ?></h2>
 
-      
+
+      <h2><?php echo $map_name ?></h2>
+            <hr>
+            <button type="button" class="btn btn-primary " id="blackWhite"><span class="glyphicon glyphicon-picture"></span> desaturate</button>
+         <hr>
       <p><img src="" alt=""></p>
       
     </div>
