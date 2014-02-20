@@ -23,7 +23,9 @@
         if($count == 0) $color = "danger";
         else $color = "success";
 
-        $html .= '<td id="row'.$id_row.'" class="cell '.$color.'" pic="0" count="'.$count.'">';
+        $dir = "$assets/maps/".$_GET["map_name"]."/$id_row-$id_cell";
+        
+        $html .= '<td id="row'.$id_row.'"  class="cell '.$color.'" pic="0" dir="'.$dir.'">';
           foreach ($images as $img) {
             $html .= '<img height="80"src="'.$img.'" alt="">';
           }
@@ -53,7 +55,7 @@
     </div>
       <script src="lib/jquery-2.1.0.min.js"></script>
       <script src="lib/jquery-mousewheel/jquery.mousewheel.js"></script>
-      
+      <script src="lib/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js"></script>
       <script src="js/vpm.js"></script>
       
   </body>
