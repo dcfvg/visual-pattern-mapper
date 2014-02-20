@@ -25,7 +25,11 @@
 
         $dir = "$assets/maps/".$_GET["map_name"]."/$id_row-$id_cell";
         
-        $html .= '<td id="row'.$id_row.'"  class="cell '.$color.'" pic="0" dir="'.$dir.'">';
+        // get top of stack image from param file
+        $pic_id =  file_get_contents($dir.'/pic_id.md');
+        if(!$pic_id) $pic_id = 0;
+        
+        $html .= '<td id="row'.$id_row.'"  class="cell '.$color.'" pic="'.$pic_id.'" dir="'.$dir.'">';
           foreach ($images as $img) {
             $html .= '<img height="80"src="'.$img.'" alt="">';
           }

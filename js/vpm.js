@@ -59,7 +59,10 @@ $(function() {
           if (pic_id < 0) pic = count-1;
           pic_id = pic_id % count;
 
-          var bg = mt.find(":nth-child("+(pic_id+1)+")").attr("src");        
+          var bg = mt.find(":nth-child("+(pic_id+1)+")").attr("src");
+          
+          save_picid(mt.attr("dir"), pic_id);
+          
           mt.css("background-image", "url("+bg+")").attr("pic", pic_id)
             .removeClass('danger')
             .addClass('success');
@@ -77,8 +80,8 @@ $(function() {
          console.log(data);
        });
     }
-    function save_picid(dir, pic){
-      var posting = $.post(ajax_url, { dir:dir, pic:pic } );
+    function save_picid(dir, pic_id){
+      var posting = $.post(ajax_url, { dir:dir, pic_id:pic_id } );
       posting.done(function( data ) {
         console.log(data);
       });

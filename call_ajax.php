@@ -11,6 +11,13 @@
     rename($from, "$to/$filename");
 
     $res["mov"] = "$from -> $to";
+  }else if(isset($_POST["dir"]) && isset($_POST["pic_id"])){
+    $pic_id = $_POST["pic_id"];
+    $dir   = $_POST["dir"];
+    file_put_contents($dir."/pic_id.md",$pic_id);
+    
+    $res["sav"] = "$dir = $pic_id";
+    
   }
 
   header('Content-Type: application/json');
