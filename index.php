@@ -53,12 +53,30 @@
   </head>
   <body class="blackwhite">
     <div id="preview">
-
-
       <h2><?php echo $map_name ?></h2>
-            <hr>
-            <button type="button" class="btn btn-primary " id="blackWhite"><span class="glyphicon glyphicon-picture"></span> desaturate</button>
-         <hr>
+        <hr>
+        <div id="filters" >
+          <button type="button" class="btn btn-primary " filter="desaturate">
+            <span class="glyphicon glyphicon-picture"></span> b&w
+          </button>
+
+          <button type="button" class="btn btn-primary " filter="contrast">
+            <span class="glyphicon glyphicon glyphicon-flash"></span> contrast
+          </button>
+
+          <button type="button" class="btn btn-primary " filter="negative">
+            <span class="glyphicon glyphicon-picture"></span> invert
+          </button>
+          
+          <button type="button" class="btn btn-primary " filter="blur">
+            <span class="glyphicon glyphicon glyphicon-unchecked"></span> blur
+          </button>
+          <hr>
+          <button type="button" class="btn btn-primary " filter="none">
+             <span class="glyphicon glyphicon glyphicon-remove-circle"></span> reset
+           </button>
+        </div>
+        <hr>
       <p><img src="" alt=""></p>
       
     </div>

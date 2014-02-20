@@ -17,7 +17,16 @@ table td {
   background-repeat: no-repeat;
 }
 .desaturate {
-  -webkit-filter: grayscale(100%) contrast(100%);
+  -webkit-filter: grayscale(1);
+}
+.contrast {
+  -webkit-filter: grayscale(1) contrast(5);
+}
+.negative {
+  -webkit-filter: grayscale(1) invert(100%) contrast(10);
+}
+.blur {
+  -webkit-filter: grayscale(1) blur(10px);
 }
 #preview {
   position: absolute;
