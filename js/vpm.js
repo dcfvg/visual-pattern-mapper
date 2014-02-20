@@ -27,7 +27,7 @@ $(function() {
     });
     function init_drag(obj, event){
       obj.draggable({
-        revert: "valid",
+        revert: true,
         start: function(event, ui) { $(this).css("z-index", z++); }
       });
       $( "td" ).droppable({
