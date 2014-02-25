@@ -54,6 +54,8 @@
   </head>
   <body class="<?php echo $page_class; ?>" >
     <div id="preview">
+      <p><img src="" alt=""></p>
+      
       <h2><?php echo $map_name ?></h2>
         <hr>
         <div id="filters" >
@@ -80,9 +82,7 @@
               <span class="glyphicon glyphicon glyphicon-remove-circle"></span> back to map list
             </a>
         </div>
-        <hr>
-      <p><img src="" alt=""></p>
-      
+        <hr>      
     </div>
     <?php         echo $html;?>
     <div class="container">

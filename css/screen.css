@@ -6,7 +6,7 @@ body {
 }
 table {
   height: 100%;
-  width: 80% !important;
+  width: 70% !important;
 }
 table img {
   display: none;
@@ -15,6 +15,8 @@ table td {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  max-width: 100px;
+  max-height: 80px;
 }
 .desaturate {
   -webkit-filter: grayscale(1);
@@ -30,8 +32,8 @@ table td {
 }
 #preview {
   position: absolute;
-  left: 80%;
-  width: 20%;
+  right: 0%;
+  width: 30%;
 }
 #preview img {
   width: 100%;

@@ -1,5 +1,5 @@
 $(function() {
-  var st = 0, sd = 0, step = 0, z = 10, ajax_url = "call_ajax.php", change_pic = false;
+  var st = 0, sd = 0, step = 10, z = 10, ajax_url = "call_ajax.php", change_pic = false;
   $('td')
     .each( function(){ refreshImage($(this) , 0);})
     .mousewheel(function(event, delta) {
