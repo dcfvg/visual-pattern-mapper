@@ -12,20 +12,23 @@ table img {
   display: none;
 }
 table td {
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   max-width: 100px;
   max-height: 80px;
 }
-.desaturate {
+.desaturate td {
   -webkit-filter: grayscale(1);
 }
-.contrast {
+.contrast td {
   -webkit-filter: grayscale(1) contrast(5);
 }
-.negative {
+.negative td {
   -webkit-filter: grayscale(1) invert(100%) contrast(10);
+}
+.crop td {
+  background-size: cover;
 }
 .blur {
   -webkit-filter: grayscale(1) blur(10px);
@@ -34,9 +37,17 @@ table td {
   position: absolute;
   right: 0%;
   width: 30%;
+  height: 100%;
+}
+#preview p {
+  width: 100%;
+  position: absolute ;
 }
 #preview img {
   width: 100%;
+}
+#preview h2 {
+  margin-top: 100%;
 }
 .home #preview {
   display: none;

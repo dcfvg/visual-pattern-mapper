@@ -54,9 +54,9 @@
   </head>
   <body class="<?php echo $page_class; ?>" >
     <div id="preview">
-      <p><img src="" alt=""></p>
+        <p><img src="" alt=""></p>
       
-      <h2><?php echo $map_name ?></h2>
+        <h2><?php echo $map_name ?></h2>
         <hr>
         <div id="filters" >
           <button type="button" class="btn btn-primary " filter="desaturate">
@@ -75,9 +75,13 @@
             <span class="glyphicon glyphicon glyphicon-unchecked"></span> blur
           </button>
           <hr>
+           <button type="button" class="btn btn-primary " filter="crop">
+               <span class="glyphicon glyphicon glyphicon-picture"></span> crop
+          </button>
           <button type="button" class="btn btn-primary " filter="none">
              <span class="glyphicon glyphicon glyphicon-remove-circle"></span> reset filters
            </button>
+
            <a class="btn btn-danger " href="/">
               <span class="glyphicon glyphicon glyphicon-remove-circle"></span> back to map list
             </a>

@@ -9,24 +9,28 @@ table{
     display:none;
   }
   td {
-    background-size:cover;
+    background-size:contain;
     background-position:center;
     background-repeat:no-repeat;
     max-width:100px;
     max-height:80px;    
     
+
   }
   height:100%;
   width:70% !important;
 }
-.desaturate {
+.desaturate td{
   -webkit-filter: grayscale(1);
 }
-.contrast{
+.contrast td{
   -webkit-filter: grayscale(1) contrast(5);
 }
-.negative {
+.negative td {
   -webkit-filter: grayscale(1) invert(100%) contrast(10);
+}
+.crop td {
+  background-size:cover;    
 }
 .blur {
   -webkit-filter: grayscale(1) blur(10px);
@@ -35,9 +39,16 @@ table{
   position:absolute;
   right:0%;
   width:30%;
-  //min-width:450px;
+  height:100%;
+  p {
+    width:100%;
+    position:absolute ;
+  }
   img {
     width:100%;
+  }
+  h2 {
+    margin-top:100%;
   }
 }
 

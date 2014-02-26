@@ -40,7 +40,7 @@ $(function() {
     $( "#filters button" ).click(function() {
       $( "#filters button" ).removeClass("btn-primary").addClass("btn-default");
       
-      $("table td").removeClass("blur negative contrast desaturate").toggleClass($(this).attr("filter"));
+      $("table").removeClass("blur negative contrast desaturate").toggleClass($(this).attr("filter"));
       
       $(this).addClass("btn-primary");      
     });
