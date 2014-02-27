@@ -4,9 +4,13 @@
 body {
   overflow: hidden;
 }
-table {
+#table-container {
   height: 100%;
-  width: 70% !important;
+  width: 70%;
+  z-index: 100;
+}
+table {
+  height: 80%;
 }
 table img {
   display: none;
@@ -51,4 +55,5 @@ table td {
 }
 .home #preview {
   display: none;
+  z-index: 1000;
 }

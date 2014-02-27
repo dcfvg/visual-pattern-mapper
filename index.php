@@ -10,13 +10,13 @@
 
     }
     $page_class = "home";
-    $maps_list = '<h1>visual pattern mapper</h1><hr><p class="lead">choose a map</p><div class="list-group">'.$maps_list.'</div>';
+    $maps_list = '<p class="lead">choose a map</p><div class="list-group">'.$maps_list.'</div>';
   }else{
     $map_name   = $_GET["map_name"];
     $map_stacks = glob("$assets/maps/$map_name/");
     $lines = construct_grid($map_stacks);
     
-    $html = '<table class="table table-hover"><tbody>';
+    $html = '<div id="table-container"><table class="table table-hover"><tbody>';
     foreach ($lines as $id_row => $cells) {
       $html .= '<tr id="row'.$id_row.'" class="row">';
       foreach ($cells as $id_cell => $images) {
@@ -40,7 +40,7 @@
       }
       $html .= "</tr>";  
     }
-    $html .= '</tbody></table>';
+    $html .= '<tr></tr></tbody></table></div>';
   }
 ?>
 <html>
@@ -49,10 +49,17 @@
     <title></title>
     <link rel="stylesheet" href="lib/bootstrap-3.1.1-dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="lib/bootstrap-3.1.1-dist/css/bootstrap.min.css">
-    
+    <link rel="stylesheet" href="lib/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
     <link rel="stylesheet" href="css/screen.css">
   </head>
   <body class="<?php echo $page_class; ?>" >
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="index.php">visual pattern mapper</a>
+            </div>
+          </div>
+    </div>
     <div id="preview">
         <p><img src="" alt=""></p>
       
