@@ -71,11 +71,11 @@
           </button>
 
           <button type="button" class="btn btn-primary " filter="contrast">
-            <span class="glyphicon glyphicon glyphicon-flash"></span> contrast
+            <span class="glyphicon glyphicon-adjust"></span> contrast
           </button>
 
           <button type="button" class="btn btn-primary " filter="negative">
-            <span class="glyphicon glyphicon-picture"></span> invert
+            <span class="glyphicon glyphicon-eye-close"></span> invert
           </button>
           
           <button type="button" class="btn btn-primary " filter="blur">
@@ -83,7 +83,7 @@
           </button>
           <hr>
            <button type="button" class="btn btn-primary " filter="crop">
-               <span class="glyphicon glyphicon glyphicon-picture"></span> crop
+               <span class="glyphicon glyphicon glyphicon-fullscreen"></span> crop
           </button>
           <button type="button" class="btn btn-primary " filter="none">
              <span class="glyphicon glyphicon glyphicon-remove-circle"></span> reset filters
