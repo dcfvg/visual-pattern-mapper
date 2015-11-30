@@ -16,4 +16,5 @@ for (( r = 0; r < row; r++ )); do
   done
 done
 
-# sudo chown -R _www $assets
+#sudo chown -R _www $assets
+sudo chmod -R 777 $assets

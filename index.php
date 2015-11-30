@@ -10,7 +10,7 @@
 
     }
     $page_class = "home";
-    $maps_list = '<p class="lead">choose a map</p><div class="list-group">'.$maps_list.'</div>';
+    $maps_list = '<p class="lead">choose a grid</p><div class="list-group">'.$maps_list.'</div>';
   }else{
     $map_name   = $_GET["map_name"];
     $map_stacks = glob("$assets/maps/$map_name/");
@@ -90,7 +90,7 @@
            </button>
 
            <a class="btn btn-danger " href="/">
-              <span class="glyphicon glyphicon glyphicon-remove-circle"></span> back to map list
+              <span class="glyphicon glyphicon glyphicon-remove-circle"></span> back to grid list
             </a>
         </div>
         <hr>      
